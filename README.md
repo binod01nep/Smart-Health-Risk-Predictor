@@ -1,107 +1,148 @@
-Smart Health Risk Predictor
+# 🫀 Smart Health Risk Predictor
 
-An ML-powered web application that predicts a person's health risk score using an XGBoost machine learning model.
+An **ML-powered web application** that predicts a person’s **health risk score** using an **XGBoost machine learning model**.
 
-Users enter 8 health metrics, and the system instantly calculates a risk score (0–40) along with personalized health recommendations.
+Users enter **8 health metrics**, and the system instantly calculates a **risk score (0–40)** along with **personalized health recommendations**.
 
-✨ Features
+---
 
-🤖 ML-Powered Predictions
-XGBoost model trained on health data to estimate risk score.
+## ✨ Features
 
-⚡ Instant Results
-Predictions generated in milliseconds.
+- 🤖 **ML-Powered Predictions**  
+  XGBoost model trained on health data.
 
-🎯 Personalized Recommendations
-Top 3 priority-based suggestions to improve health.
+- ⚡ **Instant Results**  
+  Get risk score in milliseconds.
 
-🔒 Privacy First
-No login required and no data is stored.
+- 🎯 **Personalized Recommendations**  
+  Top 3 priority-based health suggestions.
 
-🌙 Dark / Light Theme
-Smooth theme switching for better user experience.
+- 🔒 **Privacy First**  
+  No login required and **no data stored**.
 
-📊 Interactive Visualizations
-Animated gauges and contribution bars for better understanding.
+- 🌙 **Dark / Light Theme**  
+  Smooth theme switching.
 
-🛠️ Tech Stack
-Frontend
+- 📊 **Interactive Visualizations**  
+  Animated gauges and contribution charts.
 
-React 18
+---
 
-Material UI v5
+# 🛠️ Tech Stack
 
-CSS-in-JS styling
+## Frontend
+- React 18
+- Material UI v5
+- CSS-in-JS styling
+- Responsive design
 
-Responsive design
+## Backend
+- FastAPI (Python)
+- XGBoost Machine Learning Model
+- Scikit-learn
+- Pydantic Validation
 
-Backend
+---
 
-FastAPI (Python)
+# 📊 Input Metrics
 
-XGBoost Machine Learning Model
+| Metric | Range | Description |
+|------|------|------|
+| Age | 18 – 80 years | Current age |
+| BMI | 10 – 45 | Body Mass Index |
+| Daily Steps | 0 – 17,000 | Average steps per day |
+| Exercise | 0 – 8.5 hrs/week | Weekly physical activity |
+| Sleep | 2 – 12 hrs/day | Average sleep duration |
+| Blood Sugar | 50 – 200 mg/dL | Fasting glucose level |
+| Blood Pressure | 60 – 180 mmHg | Systolic pressure |
+| Smoking | Yes / No | Smoking status |
 
-Scikit-learn
+---
 
-Pydantic Validation
+# 🚀 Quick Start
 
-📊 Input Metrics
-Metric	Range	Description
-Age	18 – 80 years	Your current age
-BMI	10 – 45	Body Mass Index
-Daily Steps	0 – 17,000	Average steps per day
-Exercise	0 – 8.5 hrs/week	Weekly physical activity
-Sleep	2 – 12 hrs/day	Average sleep duration
-Blood Sugar	50 – 200 mg/dL	Fasting glucose level
-Blood Pressure	60 – 180 mmHg	Systolic pressure
-Smoking	Yes / No	Smoking status
-🚀 Quick Start
-Prerequisites
+## Prerequisites
 
 Make sure you have installed:
 
-Python 3.8+
+- **Python 3.8+**
+- **Node.js 14+**
+- **npm or yarn**
 
-Node.js 14+
+---
 
-npm or yarn
+# ⚙️ Backend Setup
 
-⚙️ Backend Setup
+Open terminal and run:
 
-Open terminal and run:cd backend
-python -m venv venvActivate virtual environment
+```bash
+cd backend
+python -m venv venv
+```
 
-Windows
+### Activate Virtual Environment
 
+**Windows**
+
+```bash
 venv\Scripts\activate
+```
 
-Mac / Linux
+**Mac / Linux**
 
+```bash
 source venv/bin/activate
-Install dependencies
+```
+
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Start backend server
+```
+
+### Start Backend Server
+
+```bash
 uvicorn main:app --reload
+```
 
-Backend will run at:
+Backend runs at:
 
+```
 http://localhost:8000
-⚙️ Frontend Setup
+```
 
-Open another terminal:
+---
 
+# ⚙️ Frontend Setup
+
+Open another terminal and run:
+
+```bash
 cd frontend
 npm install
-Start React application
+```
+
+### Start React Application
+
+```bash
 npm start
+```
 
-Frontend will run at:
+Frontend runs at:
 
+```
 http://localhost:3000
-📁 Project Structure
+```
+
+---
+
+# 📁 Project Structure
+
+```
 Smart-Health-Risk-Predictor
 │
-├── frontend/                # React application
+├── frontend/
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── LandingPage.jsx
@@ -110,25 +151,37 @@ Smart-Health-Risk-Predictor
 │   ├── public/
 │   └── package.json
 │
-├── backend/                 # FastAPI backend
-│   ├── main.py              # API endpoints
-│   ├── models/              # Trained XGBoost model
-│   ├── healthrisk.csv       # Training dataset
+├── backend/
+│   ├── main.py
+│   ├── models/
+│   ├── healthrisk.csv
 │   └── requirements.txt
 │
 ├── .gitignore
 └── README.md
-📑 API Documentation
+```
+
+---
+
+# 📑 API Documentation
 
 Once the backend is running, open:
 
+```
 http://localhost:8000/docs
+```
 
-This provides interactive Swagger documentation for testing API endpoints.
+This provides **interactive Swagger documentation** to test the API.
 
-🔗 API Endpoint
-POST /predict
-Request Body
+---
+
+# 🔗 API Endpoint
+
+### POST `/predict`
+
+### Request Body
+
+```json
 {
   "age": 42,
   "bmi": 26.6,
@@ -139,7 +192,11 @@ Request Body
   "blood_pressure": 136,
   "smoking": 0
 }
-Response
+```
+
+### Response
+
+```json
 {
   "risk_score": 13.6,
   "risk_level": "MODERATE RISK",
@@ -151,53 +208,74 @@ Response
     }
   ]
 }
-🎯 Risk Levels
-Score	Risk Level
-0 – 10	LOW RISK
-11 – 20	MODERATE RISK
-21 – 40	HIGH RISK
-⚠️ Disclaimer
+```
 
-This project is for educational purposes only.
+---
 
-It is NOT a medical diagnosis tool.
-Always consult a qualified healthcare professional for medical advice.
+# 🎯 Risk Levels
 
-🤝 Contributing
+| Score Range | Risk Level |
+|-------------|------------|
+| 0 – 10 | LOW RISK |
+| 11 – 20 | MODERATE RISK |
+| 21 – 40 | HIGH RISK |
 
-Contributions are welcome!
+---
 
-Steps
-# Fork repository
+# ⚠️ Disclaimer
+
+This project is **for educational purposes only**.
+
+It is **NOT a medical diagnosis tool**.  
+Always consult a **qualified healthcare professional** for medical advice.
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+```bash
+# Fork the repository
 
 # Create new branch
 git checkout -b feature/AmazingFeature
 
-# Commit changes
-git commit -m "Add Amazing Feature"
+# Commit your changes
+git commit -m "Add AmazingFeature"
 
-# Push branch
+# Push to branch
 git push origin feature/AmazingFeature
+```
 
-Then open a Pull Request.
+Then open a **Pull Request**.
 
-📄 License
+---
+
+# 📄 License
 
 MIT License
 
+```
 Copyright (c) 2026 Binod Budha
 
 Permission is hereby granted, free of charge,
 to any person obtaining a copy of this software
 and associated documentation files...
-📧 Contact
+```
 
-Binod Budha
+---
 
-GitHub
+# 📧 Contact
+
+**Binod Budha**
+
+GitHub:  
 https://github.com/binod01nep
 
-Project Repository
+Project Repository:  
 https://github.com/binod01nep/Smart-Health-Risk-Predictor
+
+---
 
 ❤️ Made with passion to promote health awareness
