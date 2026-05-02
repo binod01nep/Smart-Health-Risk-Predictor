@@ -5,7 +5,6 @@ An **ML-powered web application** that predicts a person’s **health risk score
 Users enter **8 health metrics**, and the system instantly calculates a **risk score (0–40)** along with **personalized health recommendations**.
 
 ---
-
 ## ✨ Features
 
 - 🤖 **ML-Powered Predictions**  
